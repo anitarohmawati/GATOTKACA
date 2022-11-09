@@ -3,7 +3,7 @@ import pandas as pd
 st.write("Anita")
 
 
-titanic = pd.read_csv("https://raw.githubusercontent.com/mofdac/-materi-das/main/01.%20Python%20for%20DA/titanic.csv")
+titanic = pd.read_csv("https://raw.githubusercontent.com/mofdac/-materi-das/main/01.%20Python%20for%20DA/titanic.csv", sep=";", encoding='cp1252')
 #read json file dari data covid 
 
 
