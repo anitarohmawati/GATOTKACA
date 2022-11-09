@@ -84,8 +84,8 @@ data = load_data()
 
 # LAYING OUT THE TOP SECTION OF THE APP
 # row1_1, row1_2 = st.columns((2, 3))
-row1_1= st.columns((1))
-row2_1= st.columns((1))
+row1_1= st.columns(1)
+row2_1= st.columns(1)
 # SEE IF THERE'S A QUERY PARAM IN THE URL (e.g. ?pickup_hour=2)
 # THIS ALLOWS YOU TO PASS A STATEFUL URL TO SOMEONE WITH A SPECIFIC HOUR SELECTED,
 # E.G. https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/main?pickup_hour=2
