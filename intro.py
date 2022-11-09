@@ -21,10 +21,11 @@ def load_data_SSA():
 def main() : 
     st.image("header.png")
     st.title("Background")
-    st.markdown("### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access")
-    st.markdown("### Imagine the positive impacts we can accrue should the donor from developed countries posiotion their investmen to promote the electrification acceleration on those areas!")
+    st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     st.dataframe(df)
+    st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries posiotion their investmen to promote the electrification acceleration on those areas!")
+   
     #st.bar_chart(df)
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
 
