@@ -11,7 +11,7 @@ st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page
 @st.experimental_singleton
 def load_data_SSA():
     data = pd.read_excel(
-        "SSH Rural Access to Electricity 2020.xlsx",
+        "SSH Rural Access to Electricity 2020.xlsx"
         # set as datetime instead of converting after the fact
     )
 
