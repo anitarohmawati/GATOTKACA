@@ -5,7 +5,7 @@ import pydeck as pdk
 import streamlit as st
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="NYC Ridesharing Demo", page_icon=":taxi:")
+st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":coal:")
 
 # LOAD DATA ONCE
 @st.experimental_singleton
@@ -103,7 +103,7 @@ def update_query_params():
 
 
 with row1_1:
-    st.title("NYC Uber Ridesharing Data")
+    st.title("Predicting Best Renewable Energy Investment on Sub-Saharan Countries for Electrification Acceleration")
     hour_selected = st.slider(
         "Select hour of pickup", 0, 23, key="pickup_hour", on_change=update_query_params
     )
