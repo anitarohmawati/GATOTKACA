@@ -83,8 +83,9 @@ def histdata(df, hr):
 data = load_data()
 
 # LAYING OUT THE TOP SECTION OF THE APP
-row1_1, row1_2 = st.columns((2, 3))
-
+# row1_1, row1_2 = st.columns((2, 3))
+row1_1= st.columns((4))
+row2_1= st.columns((4))
 # SEE IF THERE'S A QUERY PARAM IN THE URL (e.g. ?pickup_hour=2)
 # THIS ALLOWS YOU TO PASS A STATEFUL URL TO SOMEONE WITH A SPECIFIC HOUR SELECTED,
 # E.G. https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/main?pickup_hour=2
@@ -109,7 +110,7 @@ with row1_1:
     )
 
 
-with row1_2:
+with row2_1:
     st.write(
         """
     ##
@@ -119,7 +120,7 @@ with row1_2:
     )
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-row2_1, row2_2, row2_3, row2_4 = st.columns((1, 1, 1, 1))
+row3_1, row3_2, row3_3, row3_4 = st.columns((2, 1, 1, 1))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 la_guardia = [40.7900, -73.8700]
@@ -128,21 +129,21 @@ newark = [40.7090, -74.1805]
 zoom_level = 12
 midpoint = mpoint(data["lat"], data["lon"])
 
-with row2_1:
+with row3_1:
     st.write(
         f"""**All New York City from {hour_selected}:00 and {(hour_selected + 1) % 24}:00**"""
     )
     map(filterdata(data, hour_selected), midpoint[0], midpoint[1], 11)
 
-with row2_2:
+with row3_2:
     st.write("**La Guardia Airport**")
     map(filterdata(data, hour_selected), la_guardia[0], la_guardia[1], zoom_level)
 
-with row2_3:
+with row3_3:
     st.write("**JFK Airport**")
     map(filterdata(data, hour_selected), jfk[0], jfk[1], zoom_level)
 
-with row2_4:
+with row3_4:
     st.write("**Newark Airport**")
     map(filterdata(data, hour_selected), newark[0], newark[1], zoom_level)
 
