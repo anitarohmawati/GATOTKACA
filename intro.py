@@ -19,8 +19,8 @@ def load_data_SSA():
 
 
 def main() : 
-    st.dataframe(load_data_SSA())
+   
     st.title("Predicting Best Reneweable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
-
+    st.bar_chart(load_data_SSA())
 if __name__ == '__main__' : 
     main()
