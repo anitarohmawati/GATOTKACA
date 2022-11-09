@@ -5,7 +5,7 @@ import pydeck as pdk
 import streamlit as st
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":coal:")
+st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
 
 # LOAD DATA ONCE
 @st.experimental_singleton
@@ -119,7 +119,7 @@ with row1_2:
     )
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
+row2_1, row2_2, row2_3, row2_4 = st.columns((1, 1, 1, 1))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 la_guardia = [40.7900, -73.8700]
