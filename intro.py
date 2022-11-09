@@ -22,7 +22,7 @@ def main() :
    
     st.title("Predicting Best Reneweable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
     df=load_data_SSA()
-    st.altair_chart(alt.Chart(df))
+    st.bar_chart(df)
 
 
 if __name__ == '__main__' : 
