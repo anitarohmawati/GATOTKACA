@@ -21,9 +21,7 @@ def load_data_SSA():
 def main() : 
    
     st.title("Predicting Best Reneweable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
-    c = alt.Chart(load_data_SSA()).mark_circle().encode(
-    x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-
-    st.altair_chart(c, use_container_width=True)
+    df=load_data_SSA()
+    st.bar_chart(df)
 if __name__ == '__main__' : 
     main()
