@@ -1,1 +1,4 @@
 openpyxl
+streamlit==1.11.1
+pydeck==0.7.1
+protobuf==3.19.5
