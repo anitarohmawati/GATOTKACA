@@ -19,7 +19,8 @@ def load_data_SSA():
 
 
 def main() : 
-   
+    st.markdown("<img src='header.png' />")
+    st.markdown("### <div style='background-color: #63ebc6;border-radius: 10px; padding: 12px;color:#ffffff; line-height: .5;'> 2.2. Data Display Element </div>")
     st.title("Predicting Best Reneweable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
     df=load_data_SSA()
     st.dataframe(df)
