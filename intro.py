@@ -3,8 +3,8 @@ import pandas as pd
 st.write("Anita")
 
 
-titanic = pd.read_csv("https://raw.githubusercontent.com/mofdac/-materi-das/main/01.%20Python%20for%20DA/titanic.csv", sep=";", encoding='cp1252')
-#read json file dari data covid 
+titanic = pd.read_excel("IRENA_RE_Public_Investment_July2022.xlsx")
+
 
 
 def main() : 
@@ -12,7 +12,7 @@ def main() :
   st.dataframe(titanic)
 
   st.write("Metrics")
-  st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+
   st.write("Menampilkan Dataframe dengan St AgGrid")
 
   st.table([x for x in range(1,5)])
