@@ -33,9 +33,10 @@ def main() :
   
     data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
     # Initialize the matplotlib figure
-    fig, ax = plt.subplots(figsize=(2, 6))
+    fig, ax = plt.subplots(figsize=(10, 10))
 
     # Plot the total crashes
+    sns.set(rc={'axes.facecolor':'black'})
     sns.set_color_codes("pastel")
     sns.barplot(x=2020, y="Country Name", data=data_africa)
   # Add a legend and informative axis label
