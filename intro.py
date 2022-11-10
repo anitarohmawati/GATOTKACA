@@ -33,7 +33,7 @@ def main() :
   
     data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
     # Initialize the matplotlib figure
-    f, ax = plt.subplots(figsize=(6, 15))
+    fig, ax = plt.subplots(figsize=(6, 15))
 
     # Plot the total crashes
     sns.set_color_codes("pastel")
@@ -43,6 +43,7 @@ def main() :
     ax.set( ylabel="",
        xlabel="Access to Electricity in Rural Area (%)")
     sns.despine(left=True, bottom=True)
+    st.pyplot(fig)
 
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
