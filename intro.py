@@ -16,8 +16,11 @@ def load_data_SSA():
     data = pd.read_excel(
         "SSH Rural Access to Electricity 2020.xlsx"
     )
-    data=data[["Country Name",2020]]
+    data = data[["Country Name",2020]]
     data = data[data[2020] < 50].sort_values(by=2020, ascending=True)
+    data=data.reset_index()
+    data.drop(['index'],axis=1, inplace=True)
+
     return 
 
 def get_optimize(target, final_df):
@@ -28,17 +31,9 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
-    #st.title("Background")
-    #st.markdown("#### In 2020, there were 40 countries in SSA whose rural area were still below 50% in electricity access as follows:")
     
     reference_df = pd.read_csv('reference_df.csv')
    
-    
-
-    #st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
-    #st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
-
-    #st.bar_chart(df)
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
     tab1, tab2 = st.tabs(['Background','Optimizer'])
     tab1.subheader("The Needs of Electification Acceleration on Rural Area within the Sub-Saharan Africa Countries")
@@ -50,14 +45,13 @@ def main() :
         with col1:
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
             data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
-    # Initialize the matplotlib figure
+   
             fig, ax = plt.subplots(figsize=(10, 10))
 
-    # Plot the total crashes
+ 
             sns.set(rc={'axes.facecolor':'black'})
             sns.set_color_codes("pastel")
             sns.barplot(x=2020, y="Country Name", data=data_africa)
-  # Add a legend and informative axis label
             ax.legend(ncol=2, loc="lower right", frameon=True)
             ax.set( ylabel="",
             xlabel="Access to Electricity in Rural Area (%)")
