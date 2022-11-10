@@ -34,28 +34,7 @@ def main() :
     #st.dataframe(df)
     reference_df = pd.read_csv('reference_df.csv')
    
-  
-    data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
-    # Initialize the matplotlib figure
-    fig, ax = plt.subplots(figsize=(10, 10))
-
-    # Plot the total crashes
-    sns.set(rc={'axes.facecolor':'black'})
-    sns.set_color_codes("pastel")
-    sns.barplot(x=2020, y="Country Name", data=data_africa)
-  # Add a legend and informative axis label
-    ax.legend(ncol=2, loc="lower right", frameon=True)
-    ax.set( ylabel="",
-       xlabel="Access to Electricity in Rural Area (%)")
-    sns.despine(left=True, bottom=True)
-    for p in ax.patches:
-        width = p.get_width()    # get bar length
-        ax.text(width + 1,       # set the text at 1 unit right of the bar
-            p.get_y() + p.get_height() / 2, # get Y coordinate + X coordinate / 2
-            '{:1.2f}'.format(width), # set variable to display, 2 decimals
-            ha = 'left',   # horizontal alignment
-            va = 'center')  # vertical alignment
-    st.pyplot(fig)
+    
 
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
     st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
@@ -71,6 +50,27 @@ def main() :
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
+            data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
+    # Initialize the matplotlib figure
+            fig, ax = plt.subplots(figsize=(10, 10))
+
+    # Plot the total crashes
+            sns.set(rc={'axes.facecolor':'black'})
+            sns.set_color_codes("pastel")
+            sns.barplot(x=2020, y="Country Name", data=data_africa)
+  # Add a legend and informative axis label
+            ax.legend(ncol=2, loc="lower right", frameon=True)
+            ax.set( ylabel="",
+            xlabel="Access to Electricity in Rural Area (%)")
+            sns.despine(left=True, bottom=True)
+            for p in ax.patches:
+                width = p.get_width()    # get bar length
+                ax.text(width + 1,       # set the text at 1 unit right of the bar
+                    p.get_y() + p.get_height() / 2, # get Y coordinate + X coordinate / 2
+                    '{:1.2f}'.format(width), # set variable to display, 2 decimals
+                ha = 'left',   # horizontal alignment
+                va = 'center')  # vertical alignment
+            st.pyplot(fig)
             st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
 
         with col2:
