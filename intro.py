@@ -58,7 +58,9 @@ def main() :
 
     #st.bar_chart(df)
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
-
+    tab1, tab2 = st.tabs(['Background','Optimizer'])
+    tab1.subheader("The Needs of Electification on Sub-Sahara Africa")
+    tab2.subheader("Optimizing Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Region")
 
 if __name__ == '__main__' : 
     main()
