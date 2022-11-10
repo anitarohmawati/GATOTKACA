@@ -25,7 +25,7 @@ def main() :
     sns.set_theme(style="whitegrid")
     st.image("header.png")
     st.title("Background")
-    st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
+    st.markdown("#### In 2020, there were 40 countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     #st.dataframe(df)
    
@@ -52,7 +52,6 @@ def main() :
             ha = 'left',   # horizontal alignment
             va = 'center')  # vertical alignment
     st.pyplot(fig)
-    st.markdown("#### There are still 40 countries whose electricity access percentage below 50% ")
 
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
