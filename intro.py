@@ -16,7 +16,7 @@ def load_data_SSA():
     data = pd.read_excel(
         "SSH Rural Access to Electricity 2020.xlsx"
     )
-    
+    data=data[["Country Name",2020]]
     data = data[data[2020] < 50].sort_values(by=2020, ascending=True)
     return 
 
