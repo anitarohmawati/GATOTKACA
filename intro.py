@@ -5,13 +5,7 @@ import pydeck as pdk
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
-from ipyleaflet import Map, basemaps, basemap_to_tiles
-import ipyleaflet
-import json
-import os
-import requests
-from ipywidgets import link, FloatSlider
-from branca.colormap import linear
+
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
@@ -68,29 +62,7 @@ def load_data(url, filename, file_type):
 def main() : 
     
 
-
-
-    geo_json_data = load_data(
-    'https://raw.githubusercontent.com/jupyter-widgets/ipyleaflet/master/examples/us-states.json',
-    'us-states.json',
-     json.load)
-
-    unemployment = load_data(
-    'https://raw.githubusercontent.com/jupyter-widgets/ipyleaflet/master/examples/US_Unemployment_Oct2012.csv',
-    'US_Unemployment_Oct2012.csv',
-     pd.read_csv)
-
-    unemployment =  dict(zip(unemployment['State'].tolist(), unemployment['Unemployment'].tolist()))
-
-    layer = ipyleaflet.Choropleth(
-    geo_data=geo_json_data,
-    choro_data=unemployment,
-    colormap=linear.YlOrRd_04,
-    border_color='black',
-    style={'fillOpacity': 0.8, 'dashArray': '5, 5'})
-
-    m = ipyleaflet.Map(center = (43,-100), zoom = 4)
-    m.add_layer(layer)
+    
     m
 
 
