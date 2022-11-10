@@ -5,6 +5,7 @@ import pydeck as pdk
 import streamlit as st
 import plotly.express as px 
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
@@ -21,16 +22,20 @@ def load_data_SSA():
 
 
 def main() : 
+    sns.set_theme(style="whitegrid")
     st.image("header.png")
     st.title("Background")
     st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     st.dataframe(df)
+    sns.set_color_codes("pastel")
+    sns.barplot(x=2020, y="Country Name", data=df,
+            label="Total", color="b")
+
     fig,ax = plt.subplots()
     plt.scatter(df['Country Name'],df[2020])
     st.pyplot(fig)
-    plotly_fig = px.scatter(df['Country Name'],df[2020])
-    st.plotly_chart(plotly_fig)
+  
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
     #st.bar_chart(df)
