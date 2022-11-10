@@ -31,8 +31,6 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
-    df=load_data_SSA()
-    st.dataframe(df)
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
@@ -49,7 +47,6 @@ def main() :
    
             fig, ax = plt.subplots(figsize=(10, 10))
 
- 
             sns.set(rc={'axes.facecolor':'black'})
             sns.set_color_codes("pastel")
             sns.barplot(x=2020, y="Country Name", data=data_africa)
@@ -68,6 +65,7 @@ def main() :
             st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
             st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
         with col2:
+            st.markdown("####")
             df=load_data_SSA()
             st.dataframe(df)
     with tab2:
