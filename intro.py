@@ -30,8 +30,7 @@ def main() :
     st.image("header.png")
     #st.title("Background")
     #st.markdown("#### In 2020, there were 40 countries in SSA whose rural area were still below 50% in electricity access as follows:")
-    df=load_data_SSA()
-    #st.dataframe(df)
+    
     reference_df = pd.read_csv('reference_df.csv')
    
     
@@ -42,7 +41,7 @@ def main() :
     #st.bar_chart(df)
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
     tab1, tab2 = st.tabs(['Background','Optimizer'])
-    tab1.subheader("The Needs of Electification on Sub-Sahara Africa")
+    tab1.subheader("The Needs of Electification Acceleration on Rural Area within the Sub-Saharan Africa Countries")
     tab2.subheader("Optimizing Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Region")
 
     with tab1:
@@ -74,6 +73,7 @@ def main() :
             st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
             st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
         with col2:
+            df=load_data_SSA()
             st.dataframe(df)
     with tab2:
         col1, col2= st.columns([2,4])
