@@ -28,8 +28,8 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
-    st.title("Background")
-    st.markdown("#### In 2020, there were 40 countries in SSA whose rural area were still below 50% in electricity access as follows:")
+    #st.title("Background")
+    #st.markdown("#### In 2020, there were 40 countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     #st.dataframe(df)
     reference_df = pd.read_csv('reference_df.csv')
