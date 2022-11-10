@@ -29,10 +29,21 @@ def main() :
     df=load_data_SSA()
     st.dataframe(df)
    
-    fig = plt.subplots()
-    plt.scatter(df['Country Name'],df[2020])
-    st.pyplot(fig)
+   
   
+
+    # Initialize the matplotlib figure
+    f, ax = plt.subplots(figsize=(6, 15))
+
+    # Plot the total crashes
+    sns.set_color_codes("pastel")
+    sns.barplot(x=2020, y="Country Name", data=data_africa)
+  # Add a legend and informative axis label
+    ax.legend(ncol=2, loc="lower right", frameon=True)
+    ax.set( ylabel="",
+       xlabel="Access to Electricity in Rural Area (%)")
+    sns.despine(left=True, bottom=True)
+
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
     #st.bar_chart(df)
