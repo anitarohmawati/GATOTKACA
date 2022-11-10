@@ -27,7 +27,7 @@ def main() :
     st.title("Background")
     st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
-    st.dataframe(df)
+    #st.dataframe(df)
    
    
   
