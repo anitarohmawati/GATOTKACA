@@ -66,6 +66,8 @@ def main() :
             st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
         with col2:
             st.markdown("#")
+            st.markdown("#")
+            st.markdown("#")
             df=load_data_SSA()
             st.dataframe(df)
     with tab2:
