@@ -74,8 +74,9 @@ def main() :
 
            # st.dataframe(df)
             data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
-            st.dataframe(data_africa[["lat","lon"]])
-            st.map(data_africa[["lat","lon"]],zoom=2)
+            latlon=data_africa[["lat","lon"]].copy()
+            st.dataframe(latlon)
+            st.map(latlon,zoom=2)
             fig, ax = plt.subplots(figsize=(10, 10))
 
             sns.set(rc={'axes.facecolor':'black'})
