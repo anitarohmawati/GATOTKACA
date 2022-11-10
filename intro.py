@@ -43,6 +43,13 @@ def main() :
     ax.set( ylabel="",
        xlabel="Access to Electricity in Rural Area (%)")
     sns.despine(left=True, bottom=True)
+    for p in ax.patches:
+        width = p.get_width()    # get bar length
+        ax.text(width + 1,       # set the text at 1 unit right of the bar
+            p.get_y() + p.get_height() / 2, # get Y coordinate + X coordinate / 2
+            '{:1.2f}'.format(width), # set variable to display, 2 decimals
+            ha = 'left',   # horizontal alignment
+            va = 'center')  # vertical alignment
     st.pyplot(fig)
 
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
