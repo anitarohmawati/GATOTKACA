@@ -74,7 +74,7 @@ def main() :
 
            # st.dataframe(df)
             data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
-            latlon=data_africa[["lat","lon"]].copy()
+            latlon=data_africa[["Lat","Lon"]].copy()
             st.dataframe(latlon)
             st.map(latlon,zoom=2)
             fig, ax = plt.subplots(figsize=(10, 10))
