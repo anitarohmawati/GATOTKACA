@@ -36,8 +36,8 @@ def main() :
    
     
 
-    st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
-    st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
+    #st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
+    #st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
 
     #st.bar_chart(df)
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
@@ -72,7 +72,7 @@ def main() :
                 va = 'center')  # vertical alignment
             st.pyplot(fig)
             st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
-
+            st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
         with col2:
             st.dataframe(df)
     with tab2:
