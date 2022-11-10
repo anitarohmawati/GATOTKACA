@@ -29,7 +29,7 @@ def main() :
     fig,ax = plt.subplots()
     plt.scatter(df['Country Name'],df[2020])
     st.pyplot(fig)
-    plotly_fig = px.scatter(titanic['Age'],titanic['Fare'])
+    plotly_fig = px.scatter(df['Country Name'],df[2020])
     st.plotly_chart(plotly_fig)
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
