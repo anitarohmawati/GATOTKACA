@@ -21,7 +21,7 @@ def load_data_SSA():
     data=data.reset_index()
     data.drop(['index'],axis=1, inplace=True)
 
-    return 
+    return data
 
 def get_optimize(target, final_df):
     delta = (final_df.prediction - target).abs().nsmallest(5)
