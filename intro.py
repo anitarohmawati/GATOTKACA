@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
+import plotly.express as px 
+import matplotlib.pyplot as plt
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
@@ -24,6 +26,11 @@ def main() :
     st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     st.dataframe(df)
+    fig,ax = plt.subplots()
+    plt.scatter(df['Country Name'],df[2020])
+    st.pyplot(fig)
+    plotly_fig = px.scatter(titanic['Age'],titanic['Fare'])
+    st.plotly_chart(plotly_fig)
     st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
    
     #st.bar_chart(df)
