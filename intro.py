@@ -55,11 +55,12 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
+
     df = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
     columns=['lat', 'lon'])
 
-    st.map(df,zoom=2, use_container_width=True)
+    st.map(df,zoom=2)
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
