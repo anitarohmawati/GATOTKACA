@@ -69,12 +69,13 @@ def main() :
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
-            df = pd.DataFrame([6.57123208,20.48296692],
-            columns=['lat', 'lon'])
+            #df = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
+           # columns=['lat', 'lon'])
 
-            st.dataframe(df)
+           # st.dataframe(df)
             data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
-            st.map(df,zoom=2)
+            st.dataframe(data_africa[["lat","lon"]])
+            st.map(data_africa[["lat","lon"]],zoom=2)
             fig, ax = plt.subplots(figsize=(10, 10))
 
             sns.set(rc={'axes.facecolor':'black'})
