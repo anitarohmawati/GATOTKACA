@@ -31,7 +31,7 @@ def main() :
    
    
   
-
+    data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
     # Initialize the matplotlib figure
     f, ax = plt.subplots(figsize=(6, 15))
 
