@@ -66,7 +66,7 @@ def main() :
             st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
         with col2:
             st.markdown("#")
-            st.markdown("#")
+            st.markdown("##")
             st.markdown("#")
             df=load_data_SSA()
             st.dataframe(df)
@@ -75,7 +75,7 @@ def main() :
         with col1:
             #Input (Typing)
             num_input = st.number_input('Insert the Target of Electrification Growth', min_value=0.0, max_value=4.5)
-            click_me_btn = st.button('Click Me')
+            click_me_btn = st.button('Predict')
         with col2:
             if click_me_btn:
                 if num_input > 0.0:
