@@ -55,12 +55,7 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
-    m = Map(
-    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
-    center=(48.204793, 350.121558),
-    zoom=3
-    )
-    st.map(m)
+   
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
