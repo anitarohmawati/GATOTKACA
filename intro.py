@@ -28,11 +28,8 @@ def main() :
     st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
     df=load_data_SSA()
     st.dataframe(df)
-    sns.set_color_codes("pastel")
-    sns.barplot(x=2020, y="Country Name", data=df,
-            label="Total", color="b")
-
-    fig,ax = plt.subplots()
+   
+    fig = plt.subplots()
     plt.scatter(df['Country Name'],df[2020])
     st.pyplot(fig)
   
