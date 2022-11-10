@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
-#import plotly.express as px 
 import matplotlib.pyplot as plt
 import seaborn as sns
+from ipyleaflet import Map, basemaps, basemap_to_tiles
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
@@ -23,6 +23,30 @@ def load_data_SSA():
 
     return data
 
+def map(data, lat, lon, zoom):
+    st.write(
+        pdk.Deck(
+            map_style="mapbox://styles/mapbox/light-v9",
+            initial_view_state={
+                "latitude": lat,
+                "longitude": lon,
+                "zoom": zoom,
+                "pitch": 50,
+            },
+            layers=[
+                pdk.Layer(
+                    "HexagonLayer",
+                    data=data,
+                    get_position=["lon", "lat"],
+                    radius=100,
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
+                    pickable=True,
+                    extruded=True,
+                ),
+            ],
+        )
+    )
 def get_optimize(target, final_df):
     delta = (final_df.prediction - target).abs().nsmallest(5)
     opt = final_df.iloc[delta.index.to_list()]
@@ -31,6 +55,12 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
+    m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
+    center=(48.204793, 350.121558),
+    zoom=3
+    )
+    st.map(m)
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
