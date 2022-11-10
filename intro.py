@@ -14,7 +14,7 @@ def load_data_SSA():
         "SSH Rural Access to Electricity 2020.xlsx"
         # set as datetime instead of converting after the fact
     )
-    data=data[["Country Name", "2020"]]
+    data=data[["Country Name", 2020]]
     return data
 
 
