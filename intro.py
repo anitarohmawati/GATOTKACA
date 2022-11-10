@@ -56,7 +56,7 @@ def main() :
     sns.set_theme(style="whitegrid")
     st.image("header.png")
     df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    np.random.randn(1000, 2) / [50, 50] + [2.1980777, -20.8357403],
     columns=['lat', 'lon'])
 
     st.map(df)
