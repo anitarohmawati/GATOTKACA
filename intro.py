@@ -31,7 +31,8 @@ def get_optimize(target, final_df):
 def main() : 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
-    
+    df=load_data_SSA()
+    st.dataframe(df)
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
