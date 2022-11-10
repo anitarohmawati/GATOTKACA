@@ -60,10 +60,7 @@ def load_data(url, filename, file_type):
         return file_type(f)
 
 def main() : 
-    
 
-    
-    m
 
 
     sns.set_theme(style="whitegrid")
