@@ -59,7 +59,7 @@ def main() :
     np.random.randn(1000, 2) / [50, 50] + [14.36696575,-14.46765362],
     columns=['lat', 'lon'])
 
-    st.map(df,zoom=0, use_container_width=True)
+    st.map(df,zoom=2, use_container_width=True)
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
