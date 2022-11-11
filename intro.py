@@ -127,7 +127,10 @@ def main() :
             if click_me_btn:
                 if num_input > 0.0:
                     st.markdown("#### The Amount of Investment for each Renewable Energy (in Million  USD)")
-                    st.dataframe(get_optimize(num_input, reference_df))
+                    
+                    data_lengkap=get_optimize(num_input, reference_df).copy()
+                    data_lengkap['total'] = data_lengkap.sum(axis=1)
+                    st.dataframe(data_lengkap.sort_values(by='total', ascending= True))
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
                 else:
                     st.write('Input Error')
