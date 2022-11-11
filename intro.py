@@ -78,14 +78,15 @@ def main() :
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
-            
+            df = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
+            columns=['lat', 'lon'])
 
            
             data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
             latlon=data_africa[["lat","lon"]].copy()
           
             st.map(latlon,zoom=2)
-
+            """
             st.pydeck_chart(pdk.Deck(
                 map_style=None,
                 initial_view_state=pdk.ViewState(
@@ -114,7 +115,7 @@ def main() :
                     ),
                 ],
             ))
-
+            """
 
             fig, ax = plt.subplots(figsize=(10, 10))
 
