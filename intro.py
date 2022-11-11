@@ -76,14 +76,8 @@ def main() :
     with tab1:
         #columns :
         col1, col2 = st.columns(2)
-      
         with col1:
-            col1_1,col1_2 =st.columns(2)
-            with col1_1:
-                st.image("Access to Electricity from 2010 2022.png")
-            with col1_2:
-                st.image("Access to Electricity from 2010 2022.png")
-
+            st.image("Access to Electricity from 2010 2022.png")
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
             df = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
             columns=['lat', 'lon'])
