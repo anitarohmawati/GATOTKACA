@@ -139,7 +139,8 @@ def main() :
                     data_lengkap.drop(['index'],axis=1, inplace=True)
                     st.dataframe(data_lengkap.style.apply(lambda row: ['background-color: orange']*len(row) if row.name == 0 else '' ,axis=1))
 
-                    st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
+                    st.markdown("###### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
+                    st.markdown("###### The highlighted row is the most optimized option.")
 
                 else:
                     st.write('Input Error')
