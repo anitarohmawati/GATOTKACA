@@ -137,7 +137,7 @@ def main() :
                     data_lengkap=data_lengkap.sort_values(by='total', ascending= True)
                     data_lengkap=data_lengkap.reset_index()
                     data_lengkap.drop(['index'],axis=1, inplace=True)
-                    st.dataframe(data_lengkap.style.apply(lambda row: ['background-color: lightgreen']*len(row) if row.name == 0 else '' ,axis=1))
+                    st.dataframe(data_lengkap.style.apply(lambda row: ['background-color: orange']*len(row) if row.name == 0 else '' ,axis=1))
 
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
 
