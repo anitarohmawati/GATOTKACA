@@ -59,19 +59,23 @@ def load_data(url, filename, file_type):
     with open(filename, 'r') as f:
         return file_type(f)
 
+def highlight_rows(x):
+    if x==min(x.total):
+        return['background-color: orange']
+   
 def main() : 
     data_africa=load_data_SSA()
 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
 
-   
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
-    tab1, tab2 = st.tabs(['Background','Optimizer'])
+    tab1, tab2, tab3 = st.tabs(['Background','Optimizer','About Gatotkaca'])
     tab1.subheader("The Needs of Electification Acceleration on Rural Area within the Sub-Saharan Africa Countries")
     tab2.subheader("Optimizing Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Region")
+    tab3.subheader("About Gatotkaca Team")
 
     with tab1:
         #columns :
@@ -82,16 +86,11 @@ def main() :
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
             df = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
             columns=['lat', 'lon'])
-
-           
            
             latlon=data_africa[["lat","lon"]].copy()
           
             st.map(latlon,zoom=2)
            
-
-            
-
         with col2:
             st.markdown("#### ")
             st.markdown("##")
@@ -123,7 +122,7 @@ def main() :
             st.markdown("#### Navigate to the 'Optimize tab' to start predict the best investment in renewable energy for electrification!")
 
     with tab2:
-        col1, col2= st.columns([2,4])
+        col1, col2= st.columns([1,5])
         with col1:
             #Input (Typing)
             num_input = st.number_input('Insert the Target of Electrification Growth', min_value=0.0, max_value=4.5)
@@ -131,10 +130,26 @@ def main() :
         with col2:
             if click_me_btn:
                 if num_input > 0.0:
-                    st.markdown("#### Percent Investment for Renewable Energy Mixture")
-                    st.dataframe(get_optimize(num_input, reference_df))
+                    st.markdown("#### The Amount of Investment for each Renewable Energy (in Million  USD)")
+                    
+                    data_lengkap=get_optimize(num_input, reference_df).copy()
+                    data_lengkap['total'] = data_lengkap.sum(axis=1)
+                    data_lengkap=data_lengkap.sort_values(by='total', ascending= True)
+                    data_lengkap=data_lengkap.reset_index()
+                    data_lengkap.drop(['index'],axis=1, inplace=True)
+                    st.dataframe(data_lengkap.style.apply(lambda row: ['background-color: orange']*len(row) if row.name == 0 else '' ,axis=1))
+
+                    st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
+
                 else:
                     st.write('Input Error')
+
+    with tab3:
+         col1, col2= st.columns([1,1])
+         with col1:
+            st.image("Team_Gatotkaca.JPG")
+         with col2:
+            st.image("Team_Gatotkaca_Methodology.JPG")
 
 if __name__ == '__main__' : 
     main()
