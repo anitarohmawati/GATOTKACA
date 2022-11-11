@@ -125,7 +125,7 @@ def main() :
         with col2:
             if click_me_btn:
                 if num_input > 0.0:
-                    st.markdown("#### Percent Investment for Renewable Energy Mixture")
+                    st.markdown("#### The Amount of Investment for each Renewable Energy (in Million  USD)")
                     st.dataframe(get_optimize(num_input, reference_df))
                 else:
                     st.write('Input Error')
