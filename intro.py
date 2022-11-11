@@ -130,7 +130,10 @@ def main() :
                     
                     data_lengkap=get_optimize(num_input, reference_df).copy()
                     data_lengkap['total'] = data_lengkap.sum(axis=1)
+                    data_lengkap=data_lengkap.reset_index()
+                    data_lengkap.drop(['index'],axis=1, inplace=True)
                     st.dataframe(data_lengkap.sort_values(by='total', ascending= True))
+
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
 
                 else:
