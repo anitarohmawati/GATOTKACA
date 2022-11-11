@@ -133,7 +133,7 @@ def main() :
                     data_lengkap=data_lengkap.sort_values(by='total', ascending= True)
                     data_lengkap=data_lengkap.reset_index()
                     data_lengkap.drop(['index'],axis=1, inplace=True)
-                    st.dataframe()
+                    st.dataframe(data_lengkap)
 
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
 
