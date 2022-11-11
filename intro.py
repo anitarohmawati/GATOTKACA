@@ -68,9 +68,10 @@ def main() :
     reference_df = pd.read_csv('reference_df.csv')
    
     st.title("Predicting Best Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Rurals")
-    tab1, tab2 = st.tabs(['Background','Optimizer'])
+    tab1, tab2, tab3 = st.tabs(['Background','Optimizer','About Gatotkaca'])
     tab1.subheader("The Needs of Electification Acceleration on Rural Area within the Sub-Saharan Africa Countries")
     tab2.subheader("Optimizing Renewable Energy Investment for Electrification Acceleration in Sub-Saharan Africa Region")
+    tab3.subheader("About Gatotkaca Team")
 
     with tab1:
         #columns :
@@ -129,6 +130,13 @@ def main() :
                     st.dataframe(get_optimize(num_input, reference_df))
                 else:
                     st.write('Input Error')
+
+    with tab3:
+         col1, col2= st.columns([2,4])
+         with col1:
+            st.image("Team_Gatotkaca.jpg")
+         with col2:
+            st.image("Team_Gatotkaca_Methodology.jpg")
 
 if __name__ == '__main__' : 
     main()
