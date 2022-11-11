@@ -60,7 +60,7 @@ def load_data(url, filename, file_type):
         return file_type(f)
 
 def main() : 
-   
+    data_africa=load_data_SSA()
 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
@@ -82,7 +82,7 @@ def main() :
             columns=['lat', 'lon'])
 
            
-            data_africa=pd.read_excel("SSH Rural Access to Electricity 2020.xlsx")
+           
             latlon=data_africa[["lat","lon"]].copy()
           
             st.map(latlon,zoom=2)
