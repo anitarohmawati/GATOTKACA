@@ -5,7 +5,7 @@ import pydeck as pdk
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import plotly.graph_objects as go
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Renewable Energy Investment", page_icon=":globe:")
