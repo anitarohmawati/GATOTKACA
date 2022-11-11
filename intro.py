@@ -77,6 +77,7 @@ def main() :
         #columns :
         col1, col2 = st.columns(2)
         with col1:
+            st.markdown("According to The Sustainable Development Goals Report 2022, the least progression in electricity access is Sub-Saharan Africa Countries:")
             st.image("Access to Electricity from 2010 2022.png")
             st.markdown("#### In 2020, there were countries in SSA whose rural area were still below 50% in electricity access as follows:")
             df = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [6.57123208,20.48296692],
@@ -108,8 +109,10 @@ def main() :
             st.pyplot(fig)
             st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
             st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
+            st.markdown("#### Navigate to the 'Optimize tab' to start predict the best investment in renewable energy for electrification")
+
         with col2:
-            st.markdown("#")
+            st.markdown("#### ")
             st.markdown("##")
             st.markdown("#")
             df=load_data_SSA()
