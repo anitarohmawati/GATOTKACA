@@ -3,5 +3,8 @@ streamlit==1.14.0
 pydeck==0.7.1
 protobuf==3.19.5
 altair
-streamlit.cli
-
+plotly
+matplotlib
+seaborn
+numpy
+ipyleaflet
