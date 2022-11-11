@@ -91,9 +91,6 @@ def main() :
            
 
             
-            st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
-            st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
-            st.markdown("#### Navigate to the 'Optimize tab' to start predict the best investment in renewable energy for electrification")
 
         with col2:
             st.markdown("#### ")
@@ -120,6 +117,10 @@ def main() :
                 ha = 'left',   # horizontal alignment
                 va = 'center')  # vertical alignment
             st.pyplot(fig)
+            
+            st.markdown("#### Imagine the positive impacts we can accrue should the donor from developed countries position their investment to promote the electrification acceleration on those areas!")
+            st.markdown("#### Investment shall be aligned to renewable energy mixture and optimise the success rate!")
+            st.markdown("#### Navigate to the 'Optimize tab' to start predict the best investment in renewable energy for electrification")
 
     with tab2:
         col1, col2= st.columns([2,4])
