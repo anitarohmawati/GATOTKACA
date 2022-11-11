@@ -59,6 +59,10 @@ def load_data(url, filename, file_type):
     with open(filename, 'r') as f:
         return file_type(f)
 
+def highlight_rows(x):
+    if x==min(x.total):
+        return['background-color: orange']
+   
 def main() : 
     data_africa=load_data_SSA()
 
@@ -133,6 +137,7 @@ def main() :
                     data_lengkap=data_lengkap.sort_values(by='total', ascending= True)
                     data_lengkap=data_lengkap.reset_index()
                     data_lengkap.drop(['index'],axis=1, inplace=True)
+                    data_lengkap.style.apply(highlight_rows, axis = 1)
                     st.dataframe(data_lengkap)
 
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
