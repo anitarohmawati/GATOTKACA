@@ -128,7 +128,7 @@ def main() :
                 if num_input > 0.0:
                     st.markdown("#### The Amount of Investment for each Renewable Energy (in Million  USD)")
                     st.dataframe(get_optimize(num_input, reference_df))
-                    st.markdown("#### Five possible investment allocation options to choose from to obtain the desired electrification growth")
+                    st.markdown("#### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
                 else:
                     st.write('Input Error')
 
