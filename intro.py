@@ -132,7 +132,7 @@ def main() :
                     st.write('Input Error')
 
     with tab3:
-         col1, col2= st.columns([2,4])
+         col1, col2= st.columns([1,1])
          with col1:
             st.image("Team_Gatotkaca.JPG")
          with col2:
