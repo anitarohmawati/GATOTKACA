@@ -134,9 +134,9 @@ def main() :
     with tab3:
          col1, col2= st.columns([2,4])
          with col1:
-            st.image("Team_Gatotkaca.jpg")
+            st.image("Team_Gatotkaca.JPG")
          with col2:
-            st.image("Team_Gatotkaca_Methodology.jpg")
+            st.image("Team_Gatotkaca_Methodology.JPG")
 
 if __name__ == '__main__' : 
     main()
