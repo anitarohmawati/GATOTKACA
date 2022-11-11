@@ -118,7 +118,7 @@ def main() :
             st.markdown("#### Navigate to the 'Optimize tab' to start predict the best investment in renewable energy for electrification!")
 
     with tab2:
-        col1, col2= st.columns([2,4])
+        col1, col2= st.columns([1,5])
         with col1:
             #Input (Typing)
             num_input = st.number_input('Insert the Target of Electrification Growth', min_value=0.0, max_value=4.5)
@@ -132,6 +132,7 @@ def main() :
                     data_lengkap['total'] = data_lengkap.sum(axis=1)
                     st.dataframe(data_lengkap.sort_values(by='total', ascending= True))
                     st.markdown("##### Five predicted investment allocation options to choose from to obtain the desired electrification growth")
+
                 else:
                     st.write('Input Error')
 
