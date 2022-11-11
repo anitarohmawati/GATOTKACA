@@ -76,7 +76,7 @@ def main() :
     )
 
     fig.show()
-
+    st.pyplot(fig)
 
     sns.set_theme(style="whitegrid")
     st.image("header.png")
